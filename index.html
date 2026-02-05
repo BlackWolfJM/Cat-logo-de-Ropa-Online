@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda de ropa online - Nueva colección con envíos a todo el país. Encuentra polos, jeans, vestidos, zapatillas y accesorios de calidad.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tienda Ropa - Nueva Colección 2026">
+    <meta property="og:description" content="Descubre nuestra nueva colección de ropa con envíos a todo el país. Calidad y estilo al mejor precio.">
+    <meta property="og:image" content="assets/img/ui/og-image.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tutienda.com">
+   
+    <title>Tienda Ropa - Nueva Colección 2026 | Envíos a Todo el País</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header Sticky -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <h1 class="logo">ROPA<span>STORE</span></h1>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="#inicio" class="nav__link">Inicio</a></li>
+                        <li><a href="#catalogo" class="nav__link">Catálogo</a></li>
+                        <li><a href="#ofertas" class="nav__link">Ofertas</a></li>
+                        <li><a href="#guia-tallas" class="nav__link">Guía de Tallas</a></li>
+                        <li><a href="#envios" class="nav__link">Envíos</a></li>
+                        <li><a href="#contacto" class="nav__link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <button class="btn-icon" id="searchBtn" aria-label="Buscar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="btn-icon" id="favoritesBtn" aria-label="Favoritos">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="badge" id="favCount">0</span>
+                    </button>
+                    <a href="https://wa.me/51987654321?text=Hola!%20Quiero%20ver%20el%20catálogo" class="btn btn--primary btn--sm" target="_blank">
+                        Comprar por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Search Bar (Hidden by default) -->
+            <div class="search-bar" id="searchBar">
+                <input type="text" id="searchInput" placeholder="Buscar productos..." aria-label="Buscar productos">
+                <button class="btn-close" id="closeSearch" aria-label="Cerrar búsqueda">&times;</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero__image">
+            <img src="assets/img/hero.webp" alt="Nueva Colección 2026">
+        </div>
+        <div class="hero__content">
+            <h2 class="hero__title">Nueva Colección 2026</h2>
+            <p class="hero__text">Envíos a todo el país • Devoluciones gratis</p>
+            <div class="hero__buttons">
+                <a href="#catalogo" class="btn btn--primary btn--lg">Ver Catálogo</a>
+                <a href="#ofertas" class="btn btn--secondary btn--lg">Ver Ofertas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section" id="catalogo">
+        <div class="container">
+            <div class="filters">
+                <div class="filters__header">
+                    <h3>Filtrar Productos</h3>
+                    <button class="btn btn--text" id="clearFilters">Limpiar Filtros</button>
+                </div>
+
+                <div class="filters__grid">
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <label>Categoría</label>
+                        <select id="filterCategory" class="filter-select">
+                            <option value="">Todas las categorías</option>
+                            <option value="polos">Polos & Camisas</option>
+                            <option value="jeans">Jeans & Pantalones</option>
+                            <option value="vestidos">Vestidos</option>
+                            <option value="zapatillas">Zapatillas</option>
+                            <option value="accesorios">Accesorios</option>
+                        </select>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="filter-group">
+                        <label>Talla</label>
+                        <select id="filterSize" class="filter-select">
+                            <option value="">Todas las tallas</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="28">28</option>
+                            <option value="30">30</option>
+                            <option value="32">32</option>
+                            <option value="34">34</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="filter-group">
+                        <label>Color</label>
+                        <select id="filterColor" class="filter-select">
+                            <option value="">Todos los colores</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Blanco">Blanco</option>
+                            <option value="Gris">Gris</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Rojo">Rojo</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <label>Precio máximo: S/ <span id="priceValue">300</span></label>
+                        <input type="range" id="filterPrice" class="filter-range" min="0" max="300" value="300" step="10">
+                    </div>
+
+                    <!-- Sort Filter -->
+                    <div class="filter-group">
+                        <label>Ordenar por</label>
+                        <select id="filterSort" class="filter-select">
+                            <option value="newest">Más nuevo</option>
+                            <option value="price-asc">Menor precio</option>
+                            <option value="price-desc">Mayor precio</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filters__results">
+                    <span id="productCount">0 productos encontrados</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Skeleton Loading -->
+            <div class="products-skeleton" id="productsSkeleton">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be rendered here by JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more">
+                <button class="btn btn--secondary" id="loadMoreBtn">Ver Más Productos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections/Offers Section -->
+    <section class="collections-section" id="ofertas">
+        <div class="container">
+            <h2 class="section-title">Colecciones Destacadas</h2>
+            
+            <div class="tabs">
+                <div class="tabs__header">
+                    <button class="tab-btn active" data-tab="ofertas-semana">Ofertas de la Semana</button>
+                    <button class="tab-btn" data-tab="nueva-coleccion">Nueva Colección</button>
+                    <button class="tab-btn" data-tab="basicos">Básicos</button>
+                    <button class="tab-btn" data-tab="mas-vendido">Lo Más Vendido</button>
+                </div>
+
+                <div class="tabs__content">
+                    <div class="tab-pane active" id="ofertas-semana">
+                        <div class="products-grid" id="offersGrid"></div>
+                    </div>
+                    <div class="tab-pane" id="nueva-coleccion">
+                        <div class="products-grid" id="newGrid"></div>
+                    </div>
+                    <div class="tab-pane" id="basicos">
+                        <div class="products-grid" id="basicsGrid"></div>
+                    </div>
+                    <div class="tab-pane" id="mas-vendido">
+                        <div class="products-grid" id="bestsellerGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section class="size-guide-section" id="guia-tallas">
+        <div class="container">
+            <h2 class="section-title">Guía de Tallas</h2>
+            
+            <div class="size-guide">
+                <div class="size-guide__intro">
+                    <p>Para asegurarte de elegir la talla correcta, mide tu cuerpo y compara con nuestra tabla de medidas:</p>
+                    <ul class="size-tips">
+                        <li><strong>Pecho:</strong> Mide alrededor de la parte más amplia del pecho</li>
+                        <li><strong>Cintura:</strong> Mide alrededor de la cintura natural</li>
+                        <li><strong>Cadera:</strong> Mide alrededor de la parte más amplia de la cadera</li>
+                    </ul>
+                </div>
+
+                <div class="size-tables">
+                    <h3>Polos y Camisas</h3>
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Pecho (cm)</th>
+                                <th>Cintura (cm)</th>
+                                <th>Largo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>86-91</td><td>71-76</td><td>68</td></tr>
+                            <tr><td>M</td><td>91-97</td><td>76-81</td><td>70</td></tr>
+                            <tr><td>L</td><td>97-102</td><td>81-86</td><td>72</td></tr>
+                            <tr><td>XL</td><td>102-107</td><td>86-91</td><td>74</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Pantalones y Jeans</h3>
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Cintura (cm)</th>
+                                <th>Cadera (cm)</th>
+                                <th>Largo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>28</td><td>71</td><td>86</td><td>102</td></tr>
+                            <tr><td>30</td><td>76</td><td>91</td><td>104</td></tr>
+                            <tr><td>32</td><td>81</td><td>97</td><td>106</td></tr>
+                            <tr><td>34</td><td>86</td><td>102</td><td>108</td></tr>
+                            <tr><td>36</td><td>91</td><td>107</td><td>110</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="size-note">
+                    <p><strong>Nota:</strong> Las medidas pueden variar ligeramente según el modelo y la tela. Si tienes dudas, contáctanos por WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping & Returns -->
+    <section class="info-section" id="envios">
+        <div class="container">
+            <h2 class="section-title">Envíos y Devoluciones</h2>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card__icon">🚚</div>
+                    <h3>Envíos a Todo el País</h3>
+                    <p>Cobertura nacional a todas las provincias del Perú</p>
+                    <ul>
+                        <li>Lima: 24-48 horas</li>
+                        <li>Provincias: 3-5 días hábiles</li>
+                        <li>Envío gratis en compras mayores a S/ 150</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card__icon">💰</div>
+                    <h3>Costos de Envío</h3>
+                    <p>Tarifas accesibles para todo destino</p>
+                    <ul>
+                        <li>Lima Metropolitana: S/ 10</li>
+                        <li>Provincias cercanas: S/ 15</li>
+                        <li>Provincias lejanas: S/ 20</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card__icon">🔄</div>
+                    <h3>Cambios y Devoluciones</h3>
+                    <p>Garantía de satisfacción 100%</p>
+                    <ul>
+                        <li>30 días para cambios</li>
+                        <li>Producto debe estar sin uso</li>
+                        <li>Con etiquetas originales</li>
+                        <li>Cambio de talla sin costo adicional</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card__icon">📦</div>
+                    <h3>Proceso de Compra</h3>
+                    <p>Simple y rápido por WhatsApp</p>
+                    <ul>
+                        <li>1. Elige tu producto y talla</li>
+                        <li>2. Envíanos mensaje por WhatsApp</li>
+                        <li>3. Confirmamos disponibilidad</li>
+                        <li>4. Realizas el pago y enviamos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section">
+        <div class="container">
+            <h2 class="section-title">Métodos de Pago</h2>
+            
+            <div class="payment-methods">
+                <div class="payment-card">
+                    <div class="payment-icon">📱</div>
+                    <h3>Yape / Plin</h3>
+                    <p>Pago instantáneo y seguro con tu app favorita</p>
+                </div>
+
+                <div class="payment-card">
+                    <div class="payment-icon">🏦</div>
+                    <h3>Transferencia Bancaria</h3>
+                    <p>BCP, Interbank, BBVA, Scotiabank</p>
+                </div>
+
+                <div class="payment-card">
+                    <div class="payment-icon">💵</div>
+                    <h3>Contraentrega</h3>
+                    <p>Paga al recibir tu pedido (solo Lima Metropolitana)</p>
+                </div>
+
+                <div class="payment-card">
+                    <div class="payment-icon">💳</div>
+                    <h3>Tarjeta</h3>
+                    <p>Próximamente disponible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <!-- Testimonials will be rendered here by JavaScript -->
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="btn btn--text">Ver Todas las Reseñas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p>+51 987 654 321</p>
+                    <a href="https://wa.me/51987654321" target="_blank" class="btn btn--primary">Chatear Ahora</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📷</div>
+                    <h3>Instagram</h3>
+                    <p>@tiendaropa_demo</p>
+                    <a href="https://instagram.com/tiendaropa_demo" target="_blank" class="btn btn--secondary">Seguir</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Ubicación</h3>
+                    <p>Av. Principal 123<br>Lima, Perú</p>
+                    <p class="contact-hours">Lun - Sáb: 10:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <h3>¿Tienes alguna pregunta?</h3>
+                <p>Estamos aquí para ayudarte. Contáctanos por WhatsApp o Instagram.</p>
+                <a href="https://wa.me/51987654321?text=Hola!%20Tengo%20una%20consulta" target="_blank" class="btn btn--primary btn--lg">Enviar Mensaje</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">ROPA<span>STORE</span></h3>
+                    <p>Tu tienda de ropa online con las mejores marcas y precios del mercado.</p>
+                </div>
+
+                <div class="footer__col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer__links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#ofertas">Ofertas</a></li>
+                        <li><a href="#guia-tallas">Guía de Tallas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h4>Información</h4>
+                    <ul class="footer__links">
+                        <li><a href="#envios">Envíos y Devoluciones</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h4>Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="https://instagram.com/tiendaropa_demo" target="_blank" aria-label="Instagram">📷 Instagram</a>
+                        <a href="https://wa.me/51987654321" target="_blank" aria-label="WhatsApp">📱 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 RopaStore. Todos los derechos reservados.</p>
+                <p class="footer__note">Nota: Esta es una demo de catálogo, no incluye checkout ni pagos en línea.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/51987654321?text=Hola!%20Quiero%20más%20información" class="whatsapp-float" target="_blank" aria-label="WhatsApp" id="whatsappFloat">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="white">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.825.738 5.488 2.05 7.813L.05 31.95l8.288-2.037C10.512 31.263 13.175 32 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm8.038 22.513c-.363.987-2.137 1.812-2.925 1.925-.763.113-1.563.15-2.513-.163a23.52 23.52 0 01-2.338-.863c-4.1-1.775-6.763-5.925-6.963-6.2-.2-.275-1.638-2.175-1.638-4.15s1.038-2.95 1.413-3.363c.375-.412.825-.512 1.1-.512.275 0 .55 0 .8.012.25.013.588-.087.9.688.313.787 1.063 2.6 1.163 2.787.1.188.175.4.038.65-.138.25-.213.4-.413.625s-.413.5-.588.675c-.2.2-.413.412-.175.813.238.388 1.063 1.75 2.288 2.837 1.55 1.388 2.85 1.8 3.25 2 .4.2.625.175.85-.1.225-.275.975-1.138 1.238-1.525.263-.388.538-.325.875-.2.338.125 2.15 1.013 2.513 1.2.388.188.625.275.725.425.1.15.1.863-.263 1.85z"/>
+        </svg>
+    </a>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modalClose" aria-label="Cerrar">&times;</button>
+            
+            <div class="modal__body" id="modalBody">
+                <!-- Content will be dynamically loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
